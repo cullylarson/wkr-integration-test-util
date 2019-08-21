@@ -1,0 +1,41 @@
+{
+  "name": "wkr-integration-test-util",
+  "version": "1.0.0",
+  "description": "Utility library for integration tests in the wkr project.",
+  "main": "cjs/",
+  "module": "esm/",
+  "scripts": {
+    "test": "jest ./test",
+    "clean": "rm -rf cjs",
+    "watch": "esw --color --watch ./esm ./test",
+    "build": "npm run clean && babel esm --out-dir cjs",
+    "prepare": "npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cullylarson/wkr-integration-test-util.git"
+  },
+  "author": "Cully Larson <cully.larson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cullylarson/wkr-integration-test-util/issues"
+  },
+  "homepage": "https://github.com/cullylarson/wkr-integration-test-util#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "eslint": "^6.2.1",
+    "eslint-plugin-jest": "^22.15.1",
+    "eslint-watch": "^6.0.0",
+    "jest": "^24.9.0",
+    "standard": "^14.0.0"
+  },
+  "dependencies": {
+    "@cullylarson/f": "^0.1.2",
+    "mysql2": "^1.6.5"
+  }
+}
