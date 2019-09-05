@@ -63,7 +63,7 @@ const hasField = curry((fieldName, res) => {
 
 // can be passed to request. checks of field is present and set to the provided value
 const matchesField = curry((fieldName, fieldValue, res) => {
-    const foundValue = get(fieldName, undefined, res.body)
+    const foundValue = get(liftA(fieldName), undefined, res.body)
     if(foundValue !== fieldValue) throw Error(`Field [${fieldName}] does not match [${fieldValue}] in response body. Found [${foundValue}].`)
 })
 
