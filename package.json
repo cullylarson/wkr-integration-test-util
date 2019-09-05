@@ -1,6 +1,6 @@
 {
   "name": "wkr-integration-test-util",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility library for integration tests in the wkr project.",
   "main": "cjs/",
   "module": "esm/",
