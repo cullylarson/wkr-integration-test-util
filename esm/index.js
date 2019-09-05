@@ -52,7 +52,7 @@ const hasParamError = curry((paramName, errorCode, res) => {
 
     const codes = errors.map(get('code', undefined)).filter(x => !!x)
 
-    if(!codes.includes(errorCode)) throw Error(`Does not have param [${paramName}] error code [${errorCode}]. Found these codes that param: [${codes.join(', ')}]`)
+    if(!codes.includes(errorCode)) throw Error(`Does not have param [${paramName}] error code [${errorCode}]. Found these codes for that param: [${codes.join(', ')}]`)
 })
 
 // can be passed to request.expect. will check if field present in response body and is not empty
