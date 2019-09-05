@@ -1,4 +1,4 @@
-const {curry, get, has} = require('@cullylarson/f')
+const {curry, get, has, liftA} = require('@cullylarson/f')
 const {createPool} = require('mysql2')
 
 const Pool = (host, user, password, database, port) => {
@@ -46,7 +46,7 @@ const hasError = curry((errorCode, res) => {
 })
 
 const hasParamError = curry((paramName, errorCode, res) => {
-    const errors = get(['paramErrors', paramName], [], res.body)
+    const errors = get(['paramErrors', ...liftA(paramName)], [], res.body)
 
     if(!Array.isArray(errors)) throw Error(`Does not have param [${paramName}] error code [${errorCode}] because no errors for that parameter.`)
 
