@@ -1,6 +1,6 @@
 {
   "name": "wkr-integration-test-util",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Utility library for integration tests in the wkr project.",
   "main": "cjs/",
   "module": "esm/",
@@ -36,6 +36,6 @@
   },
   "dependencies": {
     "@cullylarson/f": "^0.1.2",
-    "mysql2": "^1.6.5"
+    "mysql2": "^2.3.3"
   }
 }
